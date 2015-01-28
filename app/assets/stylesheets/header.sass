@@ -1,8 +1,20 @@
-.jumbotron
+header
   background: #000
-  text-align: center
-  color: #fff
-  span
-    color: red
-  & h1
-    font-size: 40px
+  min-width: 600px 
+  margin: 0 auto
+  @include clearfix
+  .wrapper
+
+    div
+      float: left
+      text-align: left
+      color: #fff
+      span
+        color: red
+      & h1
+        margin: 0px
+        padding: 40px 0px 40px 30px
+        font-size: 40px
+    img
+      float: left
+      +size(200px auto)
