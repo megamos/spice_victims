@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @victim.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @victim.age %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @victim.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @victim.city %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @victim.link %>
+</p>
+
+<%= link_to 'Edit', edit_victim_path(@victim) %> |
+<%= link_to 'Back', victims_path %>

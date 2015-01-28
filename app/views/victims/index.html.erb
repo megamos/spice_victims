@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<div id="add-buttons">
+  <%= link_to 'Add new victim', new_victim_path, {:class => 'btn btn-warning'} %>
+  <%= link_to 'Add new link', new_victim_path, {:class => 'btn btn-primary'} %>
+</div>
+
+<div class="victim-list">
+  <table class="panel panel-default">
+    <thead class="panel-heading">
+      <h2>Victims</h2>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Link</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody class="panel-body">
+      <% @victims.each do |victim| %>
+        <tr>
+          <td><%= victim.name %></td>
+          <td><%= victim.age %></td>
+          <td><%= victim.country %></td>
+          <td><%= victim.city %></td>
+          <td><a href="<%= victim.link %>">more info</a></td>
+          <% if @admin %>
+            <td><%= link_to 'Show', victim %></td>
+            <td><%= link_to 'Edit', edit_victim_path(victim) %></td>
+            <td><%= link_to 'Destroy', victim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="links">
+  <h3>Links:</h3>
+  <a href="http://www.scienceworldreport.com/articles/14544/20140507/total-120-synthetic-marijuana-deaths-recorded-texas-past-week.htm">120 the last weeks in texas</a>
+  <a href="http://www.whitehouse.gov/sites/default/files/docs/state_profile_-_texas.pdf">Texas (all drugs)</a>
+  <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
+  <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
+</div>
