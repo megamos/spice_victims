@@ -1,8 +1,9 @@
+<% provide @victims = Victim.count %>
 <header>
   <div class="wrapper">
     <div>
-      <h1>Confirmed deaths<br> from Spice: <span><%= @victims.count %> ppl</span></h1>
+      <h1>Confirmed deaths<br> from Spice: <span><%= @victims %> ppl</span></h1>
     </div>
-    <img src="images/spice-in-hand.jpg" alt="synthetic cannabis in a hand" />
+    <%= image_tag 'spice-in-hand.jpg', { :alt => 'synthetic cannabis in a hand'} %>
   </div>
 </header>

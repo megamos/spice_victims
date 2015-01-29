@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="add-buttons">
   <%= link_to 'Add new victim', new_victim_path, {:class => 'btn btn-warning'} %>
-  <%= link_to 'Add new link', new_victim_path, {:class => 'btn btn-primary'} %>
+  <%= link_to 'Add new link', new_link_path, {:class => 'btn btn-primary'} %>
 </div>
 
 <div class="victim-list">
@@ -42,4 +42,7 @@
   <a href="http://www.whitehouse.gov/sites/default/files/docs/state_profile_-_texas.pdf">Texas (all drugs)</a>
   <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
   <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
+  <% @links.each do |link| %>
+    <a href="<%= link.url %>"> <%= link.topic %> </a>
+  <% end %>
 </div>

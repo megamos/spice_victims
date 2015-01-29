@@ -5,23 +5,23 @@ class VictimsController < ApplicationController
   # GET /victims.json
   def index
     @victims = Victim.all
+    @links = Link.all
   end
 
   # GET /victims/1
   # GET /victims/1.json
   def show
-    @victims = Victim.all
+
   end
 
   # GET /victims/new
   def new
-    @victims = Victim.all
     @victim = Victim.new
   end
 
   # GET /victims/1/edit
   def edit
-    @victims = Victim.all
+
   end
 
   # POST /victims
@@ -31,7 +31,7 @@ class VictimsController < ApplicationController
 
     respond_to do |format|
       if @victim.save
-        format.html { redirect_to @victim, notice: 'Victim was successfully created.' }
+        format.html { redirect_to victims_path, notice: 'Victim was successfully created. Thank you!' }
         format.json { render :show, status: :created, location: @victim }
       else
         format.html { render :new }
@@ -72,6 +72,6 @@ class VictimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def victim_params
-      params.require(:victim).permit(:name, :age, :country, :city, :link)
+      params.require(:victim, :name, :age, :country, :city,).permit(:link)
     end
 end

@@ -1,0 +1,13 @@
+<h2>Add a link</h2>
+<%= form_for @link do |f| %>
+  <%= f.label :topic %>
+  <%= f.text_field :topic, class: 'form-control'%>
+
+  <%= f.label :info %>
+  <%= f.text_area :info, { :placeholder => 'short about info here...', class: 'form-control'} %>
+
+  <%= f.label :url %>
+  <%= f.url_field :url, {:placeholder => 'url', class: 'form-control'} %>
+  <%= f.submit 'Add link', {class: 'btn btn-primary'} %>
+<% end %>
+<%= link_to 'back' ,url_for(:back) %>
