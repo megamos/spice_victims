@@ -1,7 +1,10 @@
-<% provide @victims = Victim.count %>
 <header>
   <div class="wrapper jumbotron">
       <%= image_tag 'spice2.jpg', { :alt => 'synthetic cannabis in a hand'} %>
-      <h1>Confirmed deaths<br> from Spice<span><%= @victims %></span></h1>
+      <h1>Confirmed deaths<br> from Spice<span>bug</span></h1>
+  </div>
+  <div id="add-buttons">
+    <%= link_to 'Add new victim', new_victim_path, {:class => "victim"} %>
+    <%= link_to 'Add new link', new_link_path, {:class => "link"} %>
   </div>
 </header>

@@ -10,10 +10,6 @@
   <%= render 'layouts/header' %>
 
   <div class="container">
-    <div id="add-buttons">
-        <%= link_to 'Add new victim', new_victim_path, {:class => "victim"} %>
-        <%= link_to 'Add new link', new_link_path, {:class => "link"} %>
-    </div>
     <div id="notice"><%= notice %></div>
     <%= yield %>
   </div>

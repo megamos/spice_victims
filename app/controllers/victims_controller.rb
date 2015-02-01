@@ -1,6 +1,5 @@
 class VictimsController < ApplicationController
   before_action :set_victim, only: [:show, :edit, :update, :destroy]
-
   # GET /victims
   # GET /victims.json
   def index
