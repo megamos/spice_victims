@@ -1,20 +1,21 @@
 header
   background: #000
-  min-width: 600px 
-  margin: 0 auto
+  min-width: 600px
   @include clearfix
-  .wrapper
-
-    div
-      float: left
-      text-align: left
+  text-align: center
+  height: 80%
+  .jumbotron
+    margin: 0 auto
+    background: #000
+    font-size: 40px
+    h1
       color: #fff
+      text-transform: uppercase
+      font-weight: 600
+      letter-spacing: 3px
       span
-        color: red
-      & h1
-        margin: 0px
-        padding: 40px 0px 40px 30px
-        font-size: 40px
+        display: block
+        color: rgb(180,50,50)
+        font-size: 60px
     img
-      float: left
-      +size(200px auto)
+      +size(300px auto)

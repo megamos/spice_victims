@@ -7,7 +7,8 @@
   <%= f.text_area :info, { :placeholder => 'short about info here...', class: 'form-control'} %>
 
   <%= f.label :url %>
-  <%= f.url_field :url, {:placeholder => 'url', class: 'form-control'} %>
+  <%= f.text_field :url, {class: 'form-control'} %>
+
   <%= f.submit 'Add link', {class: 'btn btn-primary'} %>
 <% end %>
 <%= link_to 'back' ,url_for(:back) %>

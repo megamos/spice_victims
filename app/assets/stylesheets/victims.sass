@@ -2,33 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Variables
-$accent: red
-
 // index view
 #add-buttons
   text-align: center
-  padding-top: 10px
-  a:first-child
-    margin-right: 40px
+  .victim
+    background: rgb(180,80,80)
+    &:hover
+      background: rgb(180,0,0)
+      color: #000
+  .link
+    background: rgb(80,80,180)
+    &:hover
+      background: rgb(0,0,180)
+      color: #000
+  div
+    a
+      display: block
+      width: 50%
+      float: left
+      padding: 15px 0px
+      color: #fff
+      font-size: 18px
+      letter-spacing: 1px
+      text-decoration: none
+
+.main-content>div:first-of-type
+  text-align: center
 
 .victim-list
   float: left
   padding: 20px
+  h2
+    color: rgb(160,50,50)
+  table
+    th
+      text-align: center
+      text-transform: uppercase
+      font-size: 14px
+
+      &:nth-child(2)
+        padding-right: 10px
+    td
+      padding: 5px
+  .new-victim
+    text-align: center
+    font-size: 14px
+    a
+      text-transform: uppercase
 
 .links
   float: left
   max-width: 40%
   padding: 20px
-  a
+  h2
+    color: rgb(50,50,180)
+  .link
     display: block
-    text-decoration: underline
+    text-decoration: none
+    border-bottom: 2px solid #000
+  a:first-of-type
+    border-top: 2px solid #000
+    h4
 
-.new-victim
-  text-align: center
-  a
-    font-size: 20px
-    color: $accent
+    p
+      color: #000
+
 
 // new view
 .new-wrapper

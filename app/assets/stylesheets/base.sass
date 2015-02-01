@@ -1,3 +1,5 @@
+// bootstrap classes fixes
+
 // from Scaffolding
 #notice
   color: green
@@ -31,19 +33,11 @@
 
 // headers
 h1
-  font-size: 50px
+  color: #fff
 h2
-  color: rgb(160,50,50)
   text-transform: uppercase
-h3
-  color: rgb(50,50,150)
-  text-transform: uppercase
+  font-size: 25px
 // tables
-table
-  th
-    padding-right: 15px
-  td
-    padding: 5px
 
 // links
 
@@ -55,3 +49,8 @@ form
     display: block-inline
     margin: 0 auto
     margin-bottom: 10px
+
+.container
+  @include clearfix
+  padding: 0px 0px 0px 0px
+  width: 100%
