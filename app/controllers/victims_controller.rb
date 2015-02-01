@@ -5,6 +5,7 @@ class VictimsController < ApplicationController
   def index
     @victims = Victim.all
     @links = Link.all
+    victim_count
   end
 
   # GET /victims/1
