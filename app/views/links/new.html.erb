@@ -1,5 +1,15 @@
 <h2>Add a link</h2>
-<%= form_for @link do |f| %>
+<% if @link.errors.any? %>
+  <div class="error_explanation">
+    <h2> <%= pluralize(@link.errors.count, "error") %> prohibited this victim from being saved:</h2>
+  </div>
+  <ul>
+    <% @link.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @link, :url => links_path(@link) do |f| %>
   <%= f.label :topic %>
   <%= f.text_field :topic, class: 'form-control'%>
 

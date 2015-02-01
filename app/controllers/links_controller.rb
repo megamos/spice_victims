@@ -8,13 +8,10 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-
-    respond_to do |format|
-      if @link.save
-        format.html { redirect_to root_path, notice: 'The link was successfully added. Thank you!'}
-      else
-        format.html { render :new}
-      end
+    if @link.save
+      redirect_to root_path, notice: 'The link was successfully added. Thank you!'
+    else
+      render 'new'
     end
   end
 
@@ -26,6 +23,6 @@ class LinksController < ApplicationController
 
   private
     def link_params
-      params.require(:url).permit(:topic,:info)
+      params.require(:link).permit(:url,:topic, :info)
     end
 end

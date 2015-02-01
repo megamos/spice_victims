@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_for(@victim) do |f| %>
+<%= form_for(@victim, :url => victims_path(@victim)) do |f| %>
   <% if @victim.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@victim.errors.count, "error") %> prohibited this victim from being saved:</h2>

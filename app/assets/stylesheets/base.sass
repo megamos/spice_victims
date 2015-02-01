@@ -1,8 +1,20 @@
 // bootstrap classes fixes
 
-// from Scaffolding
-#notice
-  color: green
+.container
+  padding: 0px 0px 0px 0px
+  width: 100%
+  @include clearfix
+  #notice
+    color: green
+    font-size: 16px
+    font-weight: 400
+    letter-spacing: 1px
+    padding-top: 30px
+    text-align: center
+    display: block
+    width: 50%
+    margin: 0 auto
+
 
 
 .field_with_errors
@@ -49,8 +61,3 @@ form
     display: block-inline
     margin: 0 auto
     margin-bottom: 10px
-
-.container
-  @include clearfix
-  padding: 0px 0px 0px 0px
-  width: 100%

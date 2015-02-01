@@ -72,6 +72,6 @@ class VictimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def victim_params
-      params.require(:victim, :name, :age, :country, :city,).permit(:link)
+      params.require(:victim).permit(:name, :age, :country, :city, :link)
     end
 end
