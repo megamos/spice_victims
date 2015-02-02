@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129013828) do
+ActiveRecord::Schema.define(version: 20150202133301) do
 
   create_table "links", force: :cascade do |t|
     t.string   "topic",      limit: 40
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150129013828) do
     t.string   "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "info"
   end
 
 end
