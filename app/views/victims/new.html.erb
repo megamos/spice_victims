@@ -8,7 +8,7 @@
 
   <%= form_for(@victim, :url => victims_path(@victim)) do |f| %>
     <% if @victim.errors.any? %>
-      <div id="error_explanation">
+      <div class="error_explanation">
         <h4><%= pluralize(@victim.errors.count, "error") %> prohibited this victim from being saved:</h4>
 
         <ul>
@@ -37,7 +37,7 @@
 
       <%= f.label :info %>
       <%= f.text_area :info, class: 'form-control' %>
-      
+
     <%= f.submit 'Add victim', class: 'btn btn-primary'%>
   <% end %>
   </div>
