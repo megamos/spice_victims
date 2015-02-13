@@ -18,4 +18,4 @@
 
 Lets fuel the fire of todays debate about the dangers of the (somewhat) legal drug spice.
 Young ppl that do not want to break the law so instead of smoking cannabis they buy Spice.
-I feel lucky not to be one of those that never wake up after.
+I feel lucky not to be one of those that never woke up after.
