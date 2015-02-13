@@ -1,5 +1,7 @@
 ## Spice-deaths Counter
 
+**http://cryptic-spire-9877.herokuapp.com/**
+
 **A site that counts the amount of ppl dead or hospitalized from the synthetic drug Spice.**
 
 *As I'm just starting to learn Rails, I'd love to get some help to get this site up and out there asap.*
