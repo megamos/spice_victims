@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202133301) do
+ActiveRecord::Schema.define(version: 20150213134341) do
 
   create_table "links", force: :cascade do |t|
     t.string   "topic",      limit: 40
@@ -31,5 +31,7 @@ ActiveRecord::Schema.define(version: 20150202133301) do
     t.datetime "updated_at", null: false
     t.text     "info"
   end
+
+  add_index "victims", ["id"], name: "index_victims_on_id"
 
 end
