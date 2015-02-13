@@ -2,9 +2,9 @@
 
 **http://cryptic-spire-9877.herokuapp.com/**
 
-**A site that counts the amount of ppl dead or hospitalized from the synthetic drug Spice.**
+**A site that counts the number of people killed or hospitalized from the synthetic drug Spice.**
 
-*As I'm just starting to learn Rails, I'd love to get some help to get this site up and out there asap.*
+*As I'm just starting to learn Rails, I'd love some help getting this site up and out there asap.*
 
 ### Features
 
@@ -25,6 +25,6 @@
 
 ##### Thoughts
 
-Lets fuel the fire of todays debate about the dangers of the (somewhat) legal drug spice.
-Young ppl that do not want to break the law so instead of smoking cannabis they buy Spice.
+Let's fuel the fire of today's debate about the dangers of the (somewhat) legal drug spice.
+Many young people don't want to break the law. Instead of smoking cannabis they buy Spice.
 I feel lucky not to be one of those that never woke up after.
