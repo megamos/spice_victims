@@ -39,8 +39,8 @@
     <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
     <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a> -->
     <% @links.each do |link| %>
-        <div>
-          <a href="<%= link.url %>" class="link"><h4><%= link.topic %></h4></a>
+        <div class="link">
+          <a href="<%= link.url %>"><h4><%= link.topic %></h4></a>
           <p> <%= link.info %> </p>
         </div>
     <% end %>
