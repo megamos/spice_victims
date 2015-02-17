@@ -9,16 +9,22 @@
 ### Features
 
 * Death counter
-* Hospitalized counter (if possible to get a somewhat right number)
-* *Victims:* Name/Age/City/Country/Link(info/newspaper) of all victims
+* Hospitalized counter
+* Login & Register *(Users/Admins)*
+  * option to add first-,last-name and victim relation
+* *Victims:* Name/Age/City/Country/Comments/Link(info/newspaper)
+  * commenting area for every Victim
 * *Links:* Any kind of "learn more" information about the topic
+  * voteable
+* Disscusion - dedicated to "How can we stop it?"
+* Statistics page (Showing year/country/deaths/hospitalized)
 
 #### Things that needs to be done before launch
 
 * Fix the header. (Styles, pics and maybe some more info)
 * Add admin features to edit and remove links/victims
 * Better validations
-* Maybe adding "order by vote" to links
+* Adding "order by vote" to links
 * Sorting Victims by Country then Name
 * #Show page for every Victim with more info
 * **Adding all the Victims**
