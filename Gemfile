@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 
 gem 'bourbon'
@@ -25,10 +24,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
@@ -38,6 +39,8 @@ group :development do
 end
 
 group :production do
-  gem 'pg',             '0.18.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'pg'
+  gem 'rails_12factor'
 end
+
+ruby '2.2.0'

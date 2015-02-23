@@ -1,11 +1,10 @@
 FactoryGirl.define do
   factory :victim do
-    name "MyString"
-age 1
-country "MyString"
-city "MyString"
-link "MyString"
-info "MyText"
+    name { Faker::Name.name }
+    age { rand(0..120) }
+    country { Faker::Address.country }
+    city { Faker::Address.city }
+    link { Faker::Internet.url }
+    info { Faker::Lorem.sentence(5, true, 2) }
   end
-
 end
