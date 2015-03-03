@@ -25,7 +25,6 @@
 * Add admin features to edit and remove links/victims
 * Better validations
 * Adding "order by vote" to links
-* Sorting Victims by Country then Name
 * #Show page for every Victim with more info
 * **Adding all the Victims**
 
@@ -34,3 +33,12 @@
 Let's fuel the fire of today's debate about the dangers of the (somewhat) legal drug spice.
 Many young people don't want to break the law. Instead of smoking cannabis they buy Spice.
 I feel lucky not to be one of those that never woke up after.
+
+##### Development & Deployment
+
+You can populate your development database with random people and links using
+'rake fake' command in your console. Behavior of this rake task can be changed through
+/lib/tasks/fake.rake file.
+
+Do not modify the annotations added as comments at the top of models, factories etc.
+They should update automatically when you run rake db:migrate.

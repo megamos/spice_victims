@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
+gem 'annotate'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -21,10 +22,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'did_you_mean'
+  gem 'faker'
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'

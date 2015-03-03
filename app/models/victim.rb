@@ -1,5 +1,26 @@
+# == Schema Information
+#
+# Table name: victims
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  age        :integer
+#  country    :string
+#  city       :string
+#  link       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  info       :text
+#
+# Indexes
+#
+#  index_victims_on_id  (id)
+#
+
 class Victim < ActiveRecord::Base
-  before_save { self.city = city.capitalize}
+  default_scope { order('country, name') }
+
+  before_save { self.city = city.gsub(/\S+/, &:capitalize) }
 
   validates :name, presence: true, length: {minimum: 5, maximum: 100}
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 120 }
