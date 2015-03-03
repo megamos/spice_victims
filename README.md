@@ -42,3 +42,6 @@ You can populate your development database with random people and links using
 
 Do not modify the annotations added as comments at the top of models, factories etc.
 They should update automatically when you run rake db:migrate.
+
+There is no overt user controller, so any changes to strong parameters for users have
+to be made in /config/initializers/devise_permitted_parameters.rb.

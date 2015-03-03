@@ -14,7 +14,9 @@
 #
 # Indexes
 #
-#  index_victims_on_id  (id)
+#  index_victims_on_country  (country)
+#  index_victims_on_id       (id)
+#  index_victims_on_name     (name)
 #
 
 class Victim < ActiveRecord::Base
