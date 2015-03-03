@@ -15,6 +15,8 @@ gem 'foreman'
 gem 'puma'
 gem 'annotate'
 gem 'devise'
+gem 'acts_as_votable'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'rspec-rails'
