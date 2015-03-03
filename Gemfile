@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'foreman'
 gem 'puma'
 gem 'annotate'
 gem 'devise'
