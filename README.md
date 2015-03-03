@@ -2,22 +2,20 @@
 
 **http://cryptic-spire-9877.herokuapp.com/**
 
-**A site that counts the number of people killed or hospitalized from the synthetic drug Spice.**
-
-*As I'm just starting to learn Rails, I'd love some help getting this site up and out there asap.*
+**A site that counts the number of people killed or hospitalized in relation to the synthetic drug Spice.**
 
 ### Features
 
-* Death counter
-* Hospitalized counter
-* Login & Register *(Users/Admins)*
+* *Death counter*
+* *Hospitalized counter*
+* *Login & Register* - (Users/Admins)
   * option to add first-,last-name and victim relation
-* *Victims:* Name/Age/City/Country/Comments/Link(info/newspaper)
-  * commenting area for every Victim
-* *Links:* Any kind of "learn more" information about the topic
+* *Victims* - Name/Age/City/Country/Category(deceased, hospitalized, other)/Info/Picture/Comments/Link(info, newspaper)
+  * commenting for every Victim#show
+* *Links* - Category(news, research, video)
   * voteable
-* Disscusion - dedicated to "How can we stop it?"
-* Statistics page (Showing year/country/deaths/hospitalized)
+* *Disscusion* - framed to enlighten us all about the topic
+* *Statistics page* (Showing year/country/deaths/hospitalized)
 
 #### Things that needs to be done before launch
 

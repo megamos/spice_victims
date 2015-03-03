@@ -1,7 +1,12 @@
 <header>
-  <div class="wrapper jumbotron">
-      <%= image_tag 'spice2.jpg', { :alt => 'synthetic cannabis in a hand'} %>
-      <h1>Confirmed deaths<br> from Spice<span> <%= @count %> </span></h1>
+  <div class="wrapper">
+      <!-- <%= image_tag 'spice2.jpg', { :alt => 'synthetic cannabis in a hand'} %> -->
+      <h1>Spice Victims</h1>
+      <p>involved in</p>
+  </div>
+  <div class="counters">
+    <p><span><%= @count %></span> <span>deaths</span> & <span>13081</span>
+      <span>hospitalizations</span><br>so far...</p>
   </div>
   <div id="add-buttons">
     <%= link_to 'Add new victim', new_victim_path, {:class => "victim"} %>
