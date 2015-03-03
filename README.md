@@ -45,3 +45,7 @@ They should update automatically when you run rake db:migrate.
 
 There is no overt user controller, so any changes to strong parameters for users have
 to be made in /config/initializers/devise_permitted_parameters.rb.
+
+The database configuration file /config/database.yml was removed from version control.
+You can rename and use the database.yml.sample file locally or configure your own.
+No file means that Heroku will create and configure the default database on its own.
