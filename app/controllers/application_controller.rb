@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :victim_count
 
-
   private
-    def victim_count
-      @count = Victim.count
-    end
+
+  def victim_count
+    @count = Victim.count
+  end
 
 end
