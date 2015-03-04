@@ -42,6 +42,18 @@
         <div class="link">
           <a href="<%= link.url %>"><h4><%= link.topic %></h4></a>
           <p> <%= link.info %> </p>
+
+            <span class="ups"><%= link.cached_votes_up %></span>
+
+            <%= link_to upvote_link_path(link), method: :put do %>
+              <i class="fa fa-chevron-up"></i>
+            <% end %>
+
+            <%= link_to downvote_link_path(link), method: :put do %>
+              <i class="fa fa-chevron-down"></i>
+            <% end %>
+
+            <span class="downs"><%= link.cached_votes_down %></span>
         </div>
     <% end %>
   </div>

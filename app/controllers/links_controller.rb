@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  before_action :authenticate_user!, only: [:upvote, :downvote]
+
   def new
     @link = Link.new
   end
@@ -21,8 +23,20 @@ class LinksController < ApplicationController
   def destroy
   end
 
+  def upvote
+    @link = Link.find(params[:id])
+    @link.upvote_by current_user
+    redirect_to root_path, notice: "Thank you for your vote!"
+  end
+
+  def downvote
+    @link = Link.find(params[:id])
+    @link.downvote_by current_user
+    redirect_to root_path, notice: "Thank you for your vote!"
+  end
+
   private
     def link_params
-      params.require(:link).permit(:url,:topic, :info)
+      params.require(:link).permit(:url, :topic, :info)
     end
 end

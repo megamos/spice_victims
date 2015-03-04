@@ -35,7 +35,7 @@ RSpec.describe LinksController, type: :controller do
         expect(assigns(:link)).to be_persisted
       end
 
-      it "redirects to the created link" do
+      it "redirects to root path" do
         post :create, {:link => valid_attributes}, valid_session
         expect(response).to redirect_to(root_path)
       end
