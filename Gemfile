@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foreman'
 gem 'puma'
 gem 'haml'
+gem 'haml-rails'
 gem 'annotate'
 gem 'devise'
 gem 'acts_as_votable'
