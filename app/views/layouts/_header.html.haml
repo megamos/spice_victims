@@ -10,37 +10,21 @@
       = link_to "Sign up", new_user_registration_path
 
   .wrapper
-    %h1 Spice Vitims
+    %h1 Spice Victims
     %p involved in
-  %p
-    %span
-      = @count
-    %span deaths
-    &
-    %span 13081
-    %span hospitalizations
-    %br
-    so far..
-
-  .add-buttons
-    = link_to 'Add new Victim', new_victim_path, { :class => "add-victim"}
-    = link_to 'Add a Link', new_link_path, { :class => "add-link"}
+    %p
+      %span
+        = @count
+      %span deaths
+      &
+      %span 13081
+      %span hospitalizations
+      %br
+      so far..
 
   .help-us
     = link_to 'Help us update'
 
--# <header>
--#   <div class="wrapper">
--#       <!-- <%= image_tag 'spice2.jpg', { :alt => 'synthetic cannabis in a hand'} %> -->
--#       <h1>Spice Victims</h1>
--#       <p>involved in</p>
--#   </div>
--#   <div class="counters">
--#     <p><span><%= @count %></span> <span>deaths</span> & <span>13081</span>
--#       <span>hospitalizations</span><br>so far...</p>
--#   </div>
--#   <div id="add-buttons">
--#     <%= link_to 'Add new victim', new_victim_path, {:class => "victim"} %>
--#     <%= link_to 'Add new link', new_link_path, {:class => "link"} %>
--#   </div>
--# </header>
+  .add-buttons
+    = link_to '+ Victim', new_victim_path, { :class => "add-victim"}
+    = link_to '+ Link', new_link_path, { :class => "add-link"}
