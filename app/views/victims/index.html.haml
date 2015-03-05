@@ -1,0 +1,44 @@
+.main-content
+  .victim-list
+    %table.panel.panel-default
+      %thead.panel-heading
+        %h2 Victims
+        %tr
+          %th Name
+          %th Age
+          %th Country
+          %th City
+          %th Link
+          %th{:colspan => "3"}
+      %tbody.panel-body
+        - @victims.each do |victim|
+          %tr.new-victim
+            %td= victim.name
+            %td= victim.age
+            %td= victim.country
+            %td= victim.city
+            %td
+              %a{:href => "#{victim.link}"} info
+            - if @admin
+              %td= link_to 'Show', victim
+              %td= link_to 'Edit', edit_victim_path(victim)
+              %td= link_to 'Destroy', victim, method: :delete, data: { confirm: 'Are you sure?' }
+  .links
+    %h2 Learn more
+    /
+      <a href="http://www.scienceworldreport.com/articles/14544/20140507/total-120-synthetic-marijuana-deaths-recorded-texas-past-week.htm">120 the last weeks in texas</a>
+      <a href="http://www.whitehouse.gov/sites/default/files/docs/state_profile_-_texas.pdf">Texas (all drugs)</a>
+      <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
+      <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
+    - @links.each do |link|
+      .link
+        %a{:href => "#{link.url}"}
+          %h4= link.topic
+        %p
+          = link.info
+        %span.ups= link.cached_votes_up
+        = link_to upvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-up
+        = link_to downvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-down
+        %span.downs= link.cached_votes_down

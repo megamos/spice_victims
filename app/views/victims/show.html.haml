@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @victim.name
+%p
+  %strong Age:
+  = @victim.age
+%p
+  %strong Country:
+  = @victim.country
+%p
+  %strong City:
+  = @victim.city
+%p
+  %strong Link:
+  = @victim.link
+= link_to 'Edit', edit_victim_path(@victim)
+|
+= link_to 'Back', victims_path
