@@ -1,0 +1,20 @@
+.victims-list
+  %table.panel.panel-default
+    %thead.panel-heading
+      %h2 Victims
+      %tr
+        %th Name
+        %th Age
+        %th Country
+        %th City
+    %tbody.panel-body
+      - @victims.each do |victim|
+        %tr.new-victim
+          %td= link_to victim.name, victim
+          %td= victim.age
+          %td= victim.country
+          %td= victim.city
+          - if @admin
+            %td= link_to 'Show', victim
+            %td= link_to 'Edit', edit_victim_path(victim)
+            %td= link_to 'Destroy', victim, method: :delete, data: { confirm: 'Are you sure?' }

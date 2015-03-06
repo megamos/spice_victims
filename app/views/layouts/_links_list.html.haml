@@ -1,0 +1,19 @@
+.links
+  %h2 Learn more
+  /
+    <a href="http://www.scienceworldreport.com/articles/14544/20140507/total-120-synthetic-marijuana-deaths-recorded-texas-past-week.htm">120 the last weeks in texas</a>
+    <a href="http://www.whitehouse.gov/sites/default/files/docs/state_profile_-_texas.pdf">Texas (all drugs)</a>
+    <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
+    <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
+  - @links.each do |link|
+    .link
+      %a{:href => "#{link.url}"}
+        %h4= link.topic
+      %p
+        = link.info
+      %span.ups= link.cached_votes_up
+      = link_to upvote_link_path(link), method: :put do
+        %i.fa.fa-chevron-up
+      = link_to downvote_link_path(link), method: :put do
+        %i.fa.fa-chevron-down
+      %span.downs= link.cached_votes_down
