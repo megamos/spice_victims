@@ -8,17 +8,13 @@
           %th Age
           %th Country
           %th City
-          %th Link
-          %th{:colspan => "3"}
       %tbody.panel-body
         - @victims.each do |victim|
           %tr.new-victim
-            %td= victim.name
+            %td= link_to victim.name, victim
             %td= victim.age
             %td= victim.country
             %td= victim.city
-            %td
-              %a{:href => "#{victim.link}"} info
             - if @admin
               %td= link_to 'Show', victim
               %td= link_to 'Edit', edit_victim_path(victim)
