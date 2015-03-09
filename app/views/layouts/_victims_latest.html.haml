@@ -1,0 +1,22 @@
+.victims-latest
+  %h2 Latest
+  .slider
+    %a.control-next
+      %span.glyphicon.glyphicon-chevron-right
+    %a.control-prev
+      %span.glyphicon.glyphicon-chevron-left
+    %ul
+      - @victims_latest.each do |victim|
+        %li
+          .row
+            .col-sm-3
+              = image_tag "användare.png", size: "105x135", alt: "A picture of the Victim"
+            .col-sm-4
+              %p= victim.name
+
+            .col-sm-5
+              %p Links:
+              %p= victim.link
+          .row
+            .col-sm-12.victim-info
+              %p= Faker::Lorem.paragraph

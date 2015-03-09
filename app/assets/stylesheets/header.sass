@@ -1,12 +1,13 @@
 header
   background: #000
-  min-width: 885px
   @include clearfix
   text-align: center
-
+  #notice
+    color: yellow
   .user-panel
     text-align: right
     padding: 10px 30px 0 0
+    color: #999
 
   .wrapper
     color: #fff
@@ -25,6 +26,20 @@ header
     p:last-of-type > span:nth-child(even)
       color: #F8A7A7
 
+    @media screen and ( max-width: 940px)
+      letter-spacing: 1.5px
+      h1
+        font-weight: 400
+        font-size: 48px
+        letter-spacing: 3px
+      p
+        font-size: 32px
+      p:first-of-type
+        font-size: 12px
+      p:last-of-type > span:nth-child(odd)
+        color: #BD0C0C
+        font-size: 48px
+
   .help-us
     text-align: right
     margin: 0 30px 10px 0
@@ -34,7 +49,7 @@ header
     @include clearfix
     .add-victim
       background: #400000
-      color: #FD6E6E
+      color: $victim-header
       &:hover
         background: rgb(180,0,0)
         color: #fff

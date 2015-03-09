@@ -1,0 +1,6 @@
+.links-new
+  %h2 New
+  - @links_new.each do |link|
+    .row
+      .col-sm-12
+        %a= link.topic

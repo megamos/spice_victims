@@ -1,8 +1,10 @@
 // index view
+.victims-wrapper
+  background: $victim-light
+  border: solid $thick-border $victim-dark
+  border-top: none
 .victims-list
   padding: 20px
-  h2
-    color: rgb(160,50,50)
   table
     margin: 0 auto
     width: 100%
@@ -18,6 +20,67 @@
   .new-victim
     text-align: center
     font-size: 14px
+
+.slider
+  position: relative
+  overflow: hidden
+  border-radius: 4px
+  height: $sliderHeight
+  width: $sliderWidth
+  margin: 0 auto
+
+
+.slider ul
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+
+.slider ul li
+  position: relative
+  display: block
+  float: left
+  margin: 0
+  padding: 0
+  height: $sliderHeight
+  width: $sliderWidth
+  .victim-info
+    background: $victim-dark
+    padding: 10px
+
+.slider ul li > div
+  height: 50%
+.slider ul li > div:first-child
+  text-align: center
+
+a.control-prev, a.control-next
+  position: absolute
+  top: 80%
+  color: $victim-header
+  opacity: 0.8
+  z-index: 2
+  cursor: pointer
+a.control-prev > span, a.control-next > span
+  font-size: 32px
+
+a.control-prev:hover, a.control-next:hover
+  opacity: 1
+  -webkit-transition: all 0.2s ease
+
+
+a.control-prev
+  border-radius: 0 2px 2px 0
+
+a.control-next
+  right: 0px
+  border-radius: 2px 0 0 2px
+
+
+.slider_option
+  position: relative
+  margin: 10px auto
+  width: 160px
+  font-size: 18px
 
 // new view
 .new-victim-form

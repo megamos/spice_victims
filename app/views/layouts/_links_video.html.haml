@@ -1,0 +1,16 @@
+.links-video
+  %h2 Videos
+  .sorting-options
+    %a Latest
+    %a Top-rated
+    %a Most seen
+  .row
+    - @links_video.each do |link|
+      .col-md-4
+        %a (video)
+        %span.ups= link.cached_votes_up
+        = link_to upvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-up
+        = link_to downvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-down
+        %span.downs= link.cached_votes_down

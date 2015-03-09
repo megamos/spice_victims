@@ -5,7 +5,10 @@ class VictimsController < ApplicationController
   def index
     @victims = Victim.all
     @links = Link.all
-    victim_count
+    victims_count
+    victims_latest
+    links_new
+    links_video
   end
 
   # GET /victims/1

@@ -1,3 +1,8 @@
 .main-content
-  = render 'layouts/victims_list'
-  = render 'layouts/links_list'
+  .victims-wrapper
+    = render 'layouts/victims_latest'
+    = render 'layouts/victims_list'
+  .links-wrapper
+    = render 'layouts/links_new'
+    = render 'layouts/links_video'
+    = render 'layouts/links_list'
