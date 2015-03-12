@@ -6,8 +6,11 @@
     %a Most seen
   .row
     - @links_video.each do |link|
-      .col-md-4
-        %a (video)
+      .col-md-4.video
+        %a{ href: link.url }= image_tag 'video.png', alt: "A video link"
+        %br
+        %a{ href: link.url }= link.topic
+        %br
         %span.ups= link.cached_votes_up
         = link_to upvote_link_path(link), method: :put do
           %i.fa.fa-chevron-up

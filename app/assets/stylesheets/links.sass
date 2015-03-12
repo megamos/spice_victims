@@ -1,11 +1,23 @@
 .links-wrapper
-  background: $link-light
+  //background: $link-light
   border: solid $thick-border $link-dark
   border-top: none
   color: $link-dark
 
+.vote-div
+  text-align: center
+  padding: 2px
+  span, a
+    font-size: 16px
+    line-height: 14px
+
+.links-new
+  .topic
+    font-size: $medium-font
+  .category
+    float: right
+    padding-right: 20px
 .links
-  padding: 20px
   .link
     display: block
     text-decoration: none
@@ -16,8 +28,23 @@
       color: #000
 
 .links-video
+  font-size: $medium-font
+  text-align: center
+  h2
+    text-align: left
+    padding-bottom: 0px
   .sorting-options
-
+    padding-bottom: 10px
+    a
+      padding-right: 30px
+      color: $link-dark
+    a:last-child
+      padding-right: 0px
+  .video
+    a:first-of-type
+      color: $link-header
+    img
+      +size(150px)
 //  new view
 .new-link-form
   @extend .form-styling
