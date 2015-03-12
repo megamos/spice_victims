@@ -8,8 +8,8 @@
         %th Country
         %th City
     %tbody.panel-body
-      - @victims.each do |victim|
-        %tr.new-victim
+      - @victims.take(20).each do |victim|
+        %tr
           %td= link_to victim.name, victim
           %td= victim.age
           %td= victim.country
@@ -18,3 +18,9 @@
             %td= link_to 'Show', victim
             %td= link_to 'Edit', edit_victim_path(victim)
             %td= link_to 'Destroy', victim, method: :delete, data: { confirm: 'Are you sure?' }
+      %tfoot.panel-footer
+        %tr
+          %td{ colspan: 4 }
+            = link_to '<<'
+            = link_to 'Show all'
+            = link_to '>>'
