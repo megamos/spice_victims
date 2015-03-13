@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303145953) do
+ActiveRecord::Schema.define(version: 20150313155757) do
 
   create_table "links", force: :cascade do |t|
     t.string   "topic",                   limit: 40
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20150303145953) do
     t.integer  "cached_weighted_score",               default: 0
     t.integer  "cached_weighted_total",               default: 0
     t.float    "cached_weighted_average",             default: 0.0
+    t.string   "category"
+    t.integer  "victim_id"
   end
 
   add_index "links", ["cached_votes_down"], name: "index_links_on_cached_votes_down"
@@ -35,6 +37,8 @@ ActiveRecord::Schema.define(version: 20150303145953) do
   add_index "links", ["cached_weighted_average"], name: "index_links_on_cached_weighted_average"
   add_index "links", ["cached_weighted_score"], name: "index_links_on_cached_weighted_score"
   add_index "links", ["cached_weighted_total"], name: "index_links_on_cached_weighted_total"
+  add_index "links", ["category"], name: "index_links_on_category"
+  add_index "links", ["victim_id"], name: "index_links_on_victim_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                          null: false
@@ -66,8 +70,10 @@ ActiveRecord::Schema.define(version: 20150303145953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "info"
+    t.string   "category"
   end
 
+  add_index "victims", ["category"], name: "index_victims_on_category"
   add_index "victims", ["country"], name: "index_victims_on_country"
   add_index "victims", ["id"], name: "index_victims_on_id"
   add_index "victims", ["name"], name: "index_victims_on_name"

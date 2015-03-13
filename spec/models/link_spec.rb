@@ -8,13 +8,15 @@
 #  url                     :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
-#  cached_votes_total      :integer          default("0")
-#  cached_votes_score      :integer          default("0")
-#  cached_votes_up         :integer          default("0")
-#  cached_votes_down       :integer          default("0")
-#  cached_weighted_score   :integer          default("0")
-#  cached_weighted_total   :integer          default("0")
-#  cached_weighted_average :float            default("0.0")
+#  cached_votes_total      :integer          default(0)
+#  cached_votes_score      :integer          default(0)
+#  cached_votes_up         :integer          default(0)
+#  cached_votes_down       :integer          default(0)
+#  cached_weighted_score   :integer          default(0)
+#  cached_weighted_total   :integer          default(0)
+#  cached_weighted_average :float            default(0.0)
+#  category                :string
+#  victim_id               :integer
 #
 # Indexes
 #
@@ -25,6 +27,8 @@
 #  index_links_on_cached_weighted_average  (cached_weighted_average)
 #  index_links_on_cached_weighted_score    (cached_weighted_score)
 #  index_links_on_cached_weighted_total    (cached_weighted_total)
+#  index_links_on_category                 (category)
+#  index_links_on_victim_id                (victim_id)
 #
 
 require 'rails_helper'

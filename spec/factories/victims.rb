@@ -11,12 +11,14 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  info       :text
+#  category   :string
 #
 # Indexes
 #
-#  index_victims_on_country  (country)
-#  index_victims_on_id       (id)
-#  index_victims_on_name     (name)
+#  index_victims_on_category  (category)
+#  index_victims_on_country   (country)
+#  index_victims_on_id        (id)
+#  index_victims_on_name      (name)
 #
 
 FactoryGirl.define do
