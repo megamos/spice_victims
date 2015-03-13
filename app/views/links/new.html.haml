@@ -12,6 +12,9 @@
           %li
             = message
   = form_for @link, :url => links_path(@link) do |f|
+    = f.label :category
+    %select{ class: 'form-control' }
+      = options_for_select([ ['Newspaper', 'newspaper'], ['Research', 'research'], ['Video', 'video']], 1)
     = f.label :topic
     = f.text_field :topic, {class: 'form-control'}
     = f.label :info
