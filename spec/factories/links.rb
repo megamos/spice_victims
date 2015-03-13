@@ -36,5 +36,6 @@ FactoryGirl.define do
     topic { Faker::App.name }
     info { Faker::Lorem.sentence(4, true, 2) }
     url { Faker::Internet.url }
+    category { ['video', 'newspaper', 'research'].sample }
   end
 end

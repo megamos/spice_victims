@@ -29,5 +29,6 @@ FactoryGirl.define do
     city { Faker::Address.city }
     link { Faker::Internet.url }
     info { Faker::Lorem.sentence(5, true, 2) }
+    category { ['deceased' ,'hospitalized'].sample }
   end
 end
