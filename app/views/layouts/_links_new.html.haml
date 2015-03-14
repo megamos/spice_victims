@@ -3,12 +3,13 @@
   - @links_new.each do |link|
     .row
       .col-sm-2.vote-div
-        %span.ups= link.cached_votes_up
-        = link_to upvote_link_path(link), method: :put do
-          %i.fa.fa-chevron-up
-        = link_to downvote_link_path(link), method: :put do
-          %i.fa.fa-chevron-down
-        %span.downs= link.cached_votes_down
+        %span.voting
+          %span.ups= link.cached_votes_up
+          = link_to upvote_link_path(link), method: :put do
+            %i.fa.fa-chevron-up
+          = link_to downvote_link_path(link), method: :put do
+            %i.fa.fa-chevron-down
+          %span.downs= link.cached_votes_down
       .col-sm-10
         %a.topic{ href: link.url }= link.topic
         %span.category= link.category
