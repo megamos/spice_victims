@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Admin::DashboardController, type: :controller do
-  include AuthHelper
 
-  before(:each) do
-    http_login
+  before :each do
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(ENV['ADMIN_NAME'],ENV['ADMIN_PASSWORD'])
   end
 
   describe "GET 'index'" do
