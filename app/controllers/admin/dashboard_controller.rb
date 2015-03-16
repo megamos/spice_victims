@@ -4,6 +4,8 @@ class Admin::DashboardController < ApplicationController
   def index
   end
 
+  protected
+
   def authenticate
     authenticate_or_request_with_http_basic do |user, password|
       user == ENV["ADMIN_NAME"] && password == ENV["ADMIN_PASSWORD"]
