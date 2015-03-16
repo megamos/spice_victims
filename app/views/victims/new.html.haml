@@ -2,7 +2,8 @@
   = link_to root_path do
     %span.glyphicon.glyphicon-arrow-left
   %h2 New Victim
-  = form_for(@victim, :url => victims_path(@victim)) do |f|
+
+  = form_for(@victim) do |f|
     - if @victim.errors.any?
       .error_explanation
         %h4

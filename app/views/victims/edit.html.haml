@@ -1,5 +1,28 @@
-%h1 Editing Victim
-= render 'form'
-= link_to 'Show', @victim
-|
-= link_to 'Back', victims_path
+.new-victim-form
+  = link_to admin_path do
+    %span.glyphicon.glyphicon-arrow-left
+  %h2 New Victim
+
+  = form_for(@victim) do |f|
+    - if @victim.errors.any?
+      .error_explanation
+        %h4
+          = pluralize(@victim.errors.count, "error")
+          prohibited this victim from being saved:
+        %ul
+          - @victim.errors.full_messages.each do |message|
+            %li= message
+    .form
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+      = f.label :age
+      = f.number_field :age, class: 'form-control'
+      = f.label :country
+      = f.text_field :country, class: 'form-control'
+      = f.label :city
+      = f.text_field :city, class: 'form-control'
+      = f.label :link
+      = f.url_field :link, class: 'form-control'
+      = f.label :info
+      = f.text_area :info, class: 'form-control'
+      = f.submit 'Edit victim', class: 'btn btn-primary'

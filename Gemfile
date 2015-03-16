@@ -19,7 +19,6 @@ gem 'annotate'
 gem 'devise'
 gem 'acts_as_votable'
 gem 'awesome_print'
-gem 'country_select', github: 'stefanpenner/country_select'
 
 group :development, :test do
   gem 'rspec-rails'

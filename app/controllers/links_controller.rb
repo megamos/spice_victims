@@ -1,11 +1,15 @@
 class LinksController < ApplicationController
+  # devise authentication that requires user to be registered
   before_action :authenticate_user!, only: [:upvote, :downvote]
+  # basic http authentication for admins
+  before_action :authenticate, only: [:edit, :update, :destroy]
 
   def new
     @link = Link.new
   end
 
   def edit
+    @link = Link.find(params[:id])
   end
 
   def create
@@ -18,9 +22,18 @@ class LinksController < ApplicationController
   end
 
   def update
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+      redirect_to admin_path, notice: 'Link was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to admin_path, notice: 'Link was successfully destroyed.'
   end
 
   def upvote
