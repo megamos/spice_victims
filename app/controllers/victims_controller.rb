@@ -1,7 +1,8 @@
 class VictimsController < ApplicationController
   before_action :set_victim, only: [:show, :edit, :update, :destroy]
-  # GET /victims
-  # GET /victims.json
+  # basic http authentication for admins
+  before_action :authenticate, only: [:edit, :update, :destroy]
+
   def index
     @victims = Victim.all
     @links = Link.all
@@ -11,60 +12,36 @@ class VictimsController < ApplicationController
     links_video
   end
 
-  # GET /victims/1
-  # GET /victims/1.json
   def show
-
   end
 
-  # GET /victims/new
   def new
     @victim = Victim.new
   end
 
-  # GET /victims/1/edit
   def edit
-
   end
 
-  # POST /victims
-  # POST /victims.json
   def create
     @victim = Victim.new(victim_params)
-
-    respond_to do |format|
-      if @victim.save
-        format.html { redirect_to victims_path, notice: 'Victim was successfully created. Thank you!' }
-        format.json { render :show, status: :created, location: @victim }
-      else
-        format.html { render :new }
-        format.json { render json: @victim.errors, status: :unprocessable_entity }
-      end
+    if @victim.save
+      redirect_to victims_path, notice: 'Victim was successfully created. Thank you!'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /victims/1
-  # PATCH/PUT /victims/1.json
   def update
-    respond_to do |format|
-      if @victim.update(victim_params)
-        format.html { redirect_to @victim, notice: 'Victim was successfully updated.' }
-        format.json { render :show, status: :ok, location: @victim }
-      else
-        format.html { render :edit }
-        format.json { render json: @victim.errors, status: :unprocessable_entity }
-      end
+    if @victim.update(victim_params)
+      redirect_to admin_path, notice: 'Victim was successfully updated.'
+    else
+      render :edit
     end
   end
 
-  # DELETE /victims/1
-  # DELETE /victims/1.json
   def destroy
     @victim.destroy
-    respond_to do |format|
-      format.html { redirect_to victims_url, notice: 'Victim was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to admin_path, notice: 'Victim was successfully destroyed.'
   end
 
   private

@@ -11,7 +11,7 @@
         - @link.errors.full_messages.each do |message|
           %li
             = message
-  = form_for @link, :url => links_path(@link) do |f|
+  = form_for @link do |f|
     = f.label :topic
     = f.text_field :topic, {class: 'form-control'}
     = f.label :info
