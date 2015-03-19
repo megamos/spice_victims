@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   root 'victims#index'
 
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+  end
+
 end

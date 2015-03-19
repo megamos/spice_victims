@@ -1,2 +1,21 @@
-%h1 Links#edit
-%p Find me in app/views/links/edit.html.erb
+.new-link-form
+  = link_to admin_path do
+    %span.glyphicon.glyphicon-arrow-left
+  %h2 Edit link
+  - if @link.errors.any?
+    .error_explanation
+      %h4
+        = pluralize(@link.errors.count, "error")
+        prohibited this link from being saved:
+      %ul
+        - @link.errors.full_messages.each do |message|
+          %li
+            = message
+  = form_for(@link) do |f|
+    = f.label :topic
+    = f.text_field :topic, {class: 'form-control'}
+    = f.label :info
+    = f.text_area :info, { :placeholder => 'short about info here...', class: 'form-control'}
+    = f.label :url
+    = f.url_field :url, {class: 'form-control'}
+    = f.submit 'Edit link', {class: 'btn btn-primary'}

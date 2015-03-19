@@ -47,3 +47,9 @@ to be made in /config/initializers/devise_permitted_parameters.rb.
 The database configuration file /config/database.yml was removed from version control.
 You can rename and use the database.yml.sample file locally or configure your own.
 No file means that Heroku will create and configure the default database on its own.
+
+To use the admin dashboard, create /config/local_env.yml file (you can use the sample file)
+and add any admin name and password that will be used for admin authentication. In
+production you have to set these environment variables manually. The /config/local_env.yml
+file is ignored by git. In order to run dashboard tests successfully, environment variables
+in local_env.yml have to be the same as the credentials in /spec/support/auth_helper.rb file.

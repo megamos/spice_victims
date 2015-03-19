@@ -11,9 +11,10 @@
         %h4= link.topic
       %p
         = link.info
-      %span.ups= link.cached_votes_up
-      = link_to upvote_link_path(link), method: :put do
-        %i.fa.fa-chevron-up
-      = link_to downvote_link_path(link), method: :put do
-        %i.fa.fa-chevron-down
-      %span.downs= link.cached_votes_down
+      %span.voting
+        %span.ups= link.cached_votes_up
+        = link_to upvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-up
+        = link_to downvote_link_path(link), method: :put do
+          %i.fa.fa-chevron-down
+        %span.downs= link.cached_votes_down

@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :victims_count
 
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |user, password|
+      user == ENV["ADMIN_NAME"] && password == ENV["ADMIN_PASSWORD"]
+    end
+  end
+
   private
 
   def victims_count

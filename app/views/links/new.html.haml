@@ -11,7 +11,8 @@
         - @link.errors.full_messages.each do |message|
           %li
             = message
-  = form_for @link, :url => links_path(@link) do |f|
+
+  = form_for @link do |f|
     = f.label :category
     %select{ class: 'form-control' }
       = options_for_select([ ['Newspaper', 'newspaper'], ['Research', 'research'], ['Video', 'video']], 1)
@@ -22,3 +23,6 @@
     = f.label :url
     = f.url_field :url, {class: 'form-control'}
     = f.submit 'Add link', {class: 'btn btn-primary'}
+
+
+// = form_for @link, :url => links_path(@link) do |f|

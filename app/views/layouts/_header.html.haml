@@ -2,12 +2,15 @@
   .user-panel
     - if user_signed_in?
       Welcome
-      = current_user.email
-      = link_to "Sign out", destroy_user_session_path, :method => :delete
+      = current_user.first_name
+      %br
+      = link_to "Edit account", edit_user_registration_path
+      |
+      = link_to "Log out", destroy_user_session_path, :method => :delete
     - else
-      = link_to "Sign in", new_user_session_path
+      = link_to "Log in", new_user_session_path
       or
-      = link_to "Sign up", new_user_registration_path
+      = link_to "Register", new_user_registration_path
 
   .wrapper
     %h1 Spice Victims

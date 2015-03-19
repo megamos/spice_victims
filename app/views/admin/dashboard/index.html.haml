@@ -1,0 +1,36 @@
+.main-content
+  .victims-wrapper
+    .victims-list
+      %h2 Victims Dashboard
+      %table.panel.panel-default
+        %thead.panel-heading
+          %tr
+            %th Name
+            %th Age
+            %th Country
+            %th City
+            %th Actions
+        %tbody.panel-body
+          - @victims.each do |victim|
+            %tr
+              %td= link_to victim.name, victim
+              %td= victim.age
+              %td= victim.country
+              %td= victim.city
+              %td
+                = link_to 'Edit', edit_victim_path(victim)
+                |
+                = link_to 'Destroy', victim, method: :delete, data: { confirm: 'Are you sure?' }
+
+  .links-wrapper
+    .links
+      - @links.each do |link|
+        .link
+          %a{:href => "#{link.url}"}
+            %h4= link.topic
+          %p
+            = link.info
+          %p
+            = link_to 'Edit', edit_link_path(link)
+            |
+            = link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }
