@@ -33,7 +33,7 @@
 
 FactoryGirl.define do
   factory :link do
-    topic { Faker::App.name }
+    topic { Faker::Commerce.department(2, true) }
     info { Faker::Lorem.sentence(4, true, 2) }
     url { Faker::Internet.url }
     category { ['video', 'newspaper', 'research'].sample }

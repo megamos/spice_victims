@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe LinksController, type: :controller do
 
+  let(:user) { create(:user)  }
   let(:valid_attributes) { attributes_for(:link)  }
   let(:invalid_attributes) { attributes_for(:link, topic: "OK") }
   let(:valid_session) { {} }
@@ -43,6 +44,70 @@ RSpec.describe LinksController, type: :controller do
         it "re-renders the 'new' template" do
           post :create, {:link => invalid_attributes}, valid_session
           expect(response).to render_template("new")
+        end
+      end
+    end
+  end
+
+  describe "user actions" do
+    describe "PUT upvote" do
+      context "when logged in" do
+        before :each do
+          sign_in(user)
+        end
+
+        it "increases the number of upvotes" do
+          link = Link.create! valid_attributes
+          put :upvote, id: link
+          link.reload
+          expect(link.cached_votes_up).to eq(1)
+        end
+
+        it "increases the total number of votes" do
+          link = Link.create! valid_attributes
+          expect{
+            put :upvote, id: link
+            link.reload
+          }.to change(link, :cached_votes_total).from(0).to(1)
+        end
+      end
+
+      context "when not logged in" do
+        it "redirects to the login page" do
+          link = Link.create! valid_attributes
+          put :upvote, id: link
+          expect(response).to redirect_to(new_user_session_path)
+        end
+      end
+    end
+
+    describe "PUT downvote" do
+      context "when logged in" do
+        before :each do
+          sign_in(user)
+        end
+
+        it "increases the number of downvotes" do
+          link = Link.create! valid_attributes
+          put :downvote, id: link
+          link.reload
+          expect(link.cached_votes_down).to eq(1)
+        end
+
+        it "increases the total number of votes" do
+          link = Link.create! valid_attributes
+          expect{
+            put :downvote, id: link
+            link.reload
+          }.to change(link, :cached_votes_total).from(0).to(1)
+        end
+      end
+
+      context "when not logged in" do
+        it "redirects to the login page" do
+          link = Link.create! valid_attributes
+          put :downvote, id: link
+          expect(response).to redirect_to(new_user_session_path)
         end
       end
     end
