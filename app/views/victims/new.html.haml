@@ -14,7 +14,7 @@
             %li= message
     .form
       = f.label :Category
-      %select{ class: 'form-control' }
+      %select{ class: 'form-control', name: 'victim[category]' }
         = options_for_select([ ['Hospitalized', 'hospitalized'], ['Deceased', 'deceased'] ])
       //= f.select_tag("category", options_for_select([ ['hospitalized', 'hospitalized'], ['deceased', 'deceased'] ]))
       = f.label :name

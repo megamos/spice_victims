@@ -14,7 +14,7 @@
 
   = form_for @link do |f|
     = f.label :category
-    %select{ class: 'form-control' }
+    %select{ class: 'form-control', name: 'link[category]'}
       = options_for_select([ ['Newspaper', 'newspaper'], ['Research', 'research'], ['Video', 'video']], 1)
     = f.label :topic
     = f.text_field :topic, {class: 'form-control'}
@@ -23,6 +23,5 @@
     = f.label :url
     = f.url_field :url, {class: 'form-control'}
     = f.submit 'Add link', {class: 'btn btn-primary'}
-
 
 // = form_for @link, :url => links_path(@link) do |f|
