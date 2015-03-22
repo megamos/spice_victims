@@ -1,17 +1,17 @@
 task :fake => :environment do
-  puts 'Generating victims...'
-  30.times do
+  puts "Generating victims for #{:environment}"
+  12000.times do
     Victim.create(name: Faker::Name.name,
                   country: Faker::Address.country,
                   city: Faker::Address.city,
                   link: Faker::Internet.url,
-                  category: ['deceased' ,'hospitalized'].sample,
-                  age: rand(0..120))
+                  category: ['deceased' ,'hospitalized','hospitalized','hospitalized','hospitalized','hospitalized'].sample,
+                  age: rand(0..90))
   end
 
   puts 'Generating links...'
 
-  10.times do
+  490.times do
     Link.create(topic: Faker::Commerce.product_name,
                 info: Faker::Company.catch_phrase,
                 url: Faker::Internet.url,
