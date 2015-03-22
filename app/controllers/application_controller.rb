@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
   private
 
   def victims_count
-    @count = Victim.count
+    @deceased = Victim.where( category: 'deceased' ).count
+    @hospitalized = Victim.where( category: 'hospitalized' ).count
   end
 
 end
