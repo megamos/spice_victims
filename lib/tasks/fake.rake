@@ -1,5 +1,5 @@
 task :fake => :environment do
-  puts "Generating victims for #{:environment}"
+  puts "Generating victims for #{Rails.env}"
   12000.times do
     Victim.create(name: Faker::Name.name,
                   country: Faker::Address.country,
