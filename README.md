@@ -19,11 +19,10 @@
 
 #### Things that needs to be done before launch
 
-* Fix the header. (Styles, pics and maybe some more info)
-* Add admin features to edit and remove links/victims
+* Making victim relation field into select options
+* Adding Discussion forum + Comments
 * Better validations
-* Adding "order by vote" to links
-* #Show page for every Victim with more info
+* Final styling
 * **Adding all the Victims**
 
 ##### Thoughts

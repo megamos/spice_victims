@@ -2,16 +2,17 @@
 #
 # Table name: victims
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  age        :integer
-#  country    :string
-#  city       :string
-#  link       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  info       :text
-#  category   :string
+#  id            :integer          not null, primary key
+#  name          :string
+#  age           :integer
+#  country       :string
+#  city          :string
+#  link          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  info          :text
+#  category      :string
+#  accident_date :date
 #
 # Indexes
 #

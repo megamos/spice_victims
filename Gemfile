@@ -4,21 +4,22 @@ gem 'rails', '4.2.0'
 
 gem 'bourbon'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
 gem 'bootstrap-sass', '3.2.0.0'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foreman'
 gem 'puma'
 gem 'haml'
 gem 'haml-rails'
 gem 'annotate'
+gem 'awesome_print'
+
+gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'acts_as_votable'
-gem 'awesome_print'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -43,6 +44,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'quiet_assets'
+  gem 'bullet'
 end
 
 group :production do

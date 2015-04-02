@@ -12,7 +12,8 @@
       = f.label :email
       = f.email_field :email, class: 'form-control'
       = f.label :victim_relation, "Are you related to any of the victims?"
-      = f.text_field :victim_relation, class: 'form-control'
+      %select{ class: 'form-control', name: 'user[victim_relation]' }
+        = options_for_select([ ['Family', 'family'], ['Friend', 'friend'], ['Relative', 'relative'], ['Acquainted', 'acquainted']])
       = f.label :password
       - if @validatable
         %em

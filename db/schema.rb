@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313155757) do
+ActiveRecord::Schema.define(version: 20150402135937) do
 
   create_table "links", force: :cascade do |t|
     t.string   "topic",                   limit: 40
@@ -67,10 +67,11 @@ ActiveRecord::Schema.define(version: 20150313155757) do
     t.string   "country"
     t.string   "city"
     t.string   "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "info"
     t.string   "category"
+    t.date     "accident_date"
   end
 
   add_index "victims", ["category"], name: "index_victims_on_category"
