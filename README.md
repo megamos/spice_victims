@@ -19,11 +19,13 @@
 
 #### Things that needs to be done before launch
 
-* Making victim relation field into select options
 * Adding Discussion forum + Comments
+* Fix js function for showing next/last of Latest victims
+* Make the victims#show page
+* Pictures and explanation of Spice
+  * Maybe a "What is Spice?" link that shows a page with info.
 * Better validations
 * Final styling
-* **Adding all the Victims**
 
 ##### Thoughts
 
