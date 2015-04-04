@@ -64,7 +64,7 @@ class VictimsController < ApplicationController
     end
 
     def links_video
-      @links_video = @links.take(3)
+      @links_video = Link.where( category: "video" ).limit(3)
       #Later replaced by
       #@links_video = Links.sort_by( :category => "video" ).take(3)
     end
