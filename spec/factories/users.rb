@@ -18,6 +18,9 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
+#  forem_admin            :boolean          default(FALSE)
+#  forem_state            :string           default("pending_review")
+#  forem_auto_subscribe   :boolean          default(FALSE)
 #
 # Indexes
 #
