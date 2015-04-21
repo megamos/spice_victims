@@ -12,12 +12,9 @@
           %li
             = message
 
-  = form_for @link do |f|
-    = f.label :category
-    %select{ class: 'form-control', name: 'link[category]'}
-      = options_for_select([ ['Newspaper', 'newspaper'], ['Research', 'research'], ['Video', 'video']], 1)
-    = f.label :topic
-    = f.text_field :topic, {class: 'form-control'}
+  = simple_form_for @link, html: {class: 'form-horizontal'} do |f|
+    = f.input :category, collection: ['Newspaper', 'Research', 'Video', 'Other']
+    = f.input :topic, as: :text
     = f.label :info
     = f.text_area :info, { :placeholder => 'short about info here...', class: 'form-control'}
     = f.label :url
