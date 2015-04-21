@@ -40,6 +40,6 @@ class Link < ActiveRecord::Base
 
   validates :category, presence: true, inclusion: {in: %w(Newspaper Research Video Other)}
   validates :topic, presence: true, length: {minimum: 3,maximum: 50}
-  validates :info, length: {minimum: 10,maximum: 150}
+  validates :info, length: {maximum: 500}
   validates :url, presence: true, uniqueness: true
 end
