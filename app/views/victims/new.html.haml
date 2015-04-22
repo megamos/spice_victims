@@ -1,35 +1,16 @@
 .new-victim-form
   = link_to root_path do
     %span.glyphicon.glyphicon-arrow-left
-  %h2 New Victim
 
-  = form_for(@victim) do |f|
-    - if @victim.errors.any?
-      .error_explanation
-        %h4
-          = pluralize(@victim.errors.count, "error")
-          prohibited this victim from being saved:
-        %ul
-          - @victim.errors.full_messages.each do |message|
-            %li= message
-    .form
-      = f.label :Category
-      %select{ class: 'form-control', name: 'victim[category]' }
-        = options_for_select([ ['Hospitalized', 'hospitalized'], ['Deceased', 'deceased'] ])
-      //= f.select_tag("category", options_for_select([ ['hospitalized', 'hospitalized'], ['deceased', 'deceased'] ]))
-      = f.label :accident_date
-      = f.date_field :accident_date, class: 'form-control', min: "2012-01-01", max: "2013-01-01"
-      = f.label :name
-      = f.text_field :name, class: 'form-control'
-      = f.label :age
-      = f.number_field :age, class: 'form-control'
-      = f.label :country
-      = f.text_field :country, class: 'form-control'
-      = f.label :city
-      = f.text_field :city, class: 'form-control'
-      = f.label :info
-      = f.text_area :info, class: 'form-control'
-      = f.label :link
-      %span ( Sites connected to what happend )
-      = f.url_field :link, class: 'form-control'
-      = f.submit 'Add victim', class: 'btn btn-primary'
+  %h2 New Victim
+  = simple_form_for @victim, html: {class: 'form-horizontal'} do |f|
+    = f.input :category, collection: %w(Hospitalized Deceased)
+    = f.input :accident_date, as: :date, start_year: Date.today.year - 20, end_year: Date.today.year
+    = f.input :name
+    = f.input :age, collection: 8..95
+    = f.input :country, as: :string
+    = f.input :city
+    = f.input :info, as: :text
+    %span ( Sites connected to what happend )
+    = f.input :link, as: :url
+    = f.button :submit, 'Add victim', class: 'btn btn-primary'
