@@ -44,11 +44,11 @@ group :test do
 end
 
 group :development do
-  gem "better_errors"
+  gem 'super-pry-rails' #Meta gem to bundle better_errors, rails-footnotes, super-pry, and pry-rails.
   gem "binding_of_caller"
   gem 'quiet_assets'
   gem 'bullet'
-  
+
 end
 
 group :production do
