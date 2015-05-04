@@ -19,10 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'victims#index'
-
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
   end
+
+  root 'victims#index'
 
 end
