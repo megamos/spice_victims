@@ -19,9 +19,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'simple_form'
 gem 'devise'
 gem 'acts_as_votable'
 gem 'will_paginate', '3.0.5'
+gem 'groupdate'
+gem 'chartkick'
 
 group :development, :test do
   gem 'rspec-rails'
