@@ -21,7 +21,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'acts_as_votable'
-gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'will_paginate', '3.0.5'
 
 group :development, :test do

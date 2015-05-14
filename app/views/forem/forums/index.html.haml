@@ -1,8 +1,0 @@
-#forums_container
-  = link_to 'Home', main_app.root_path
-  %h1#forums_title= t('.title')
-  = render @categories
-%br/
-%footer#admin_link
-  - if forem_admin?
-    = link_to t("area", :scope => "forem.admin"), forem.admin_root_path
