@@ -33,4 +33,6 @@ class Victim < ActiveRecord::Base
   validates :city, presence: true, length: {maximum: 30}
   validates :link, presence: true
   validates :info, length: {maximum: 700}
+
+  self.per_page = 20
 end

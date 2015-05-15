@@ -8,7 +8,7 @@
         %th Country
         %th City
     %tbody.panel-body
-      - @victims.take(20).each do |victim|
+      - @victims.each do |victim|
         %tr
           %td= link_to victim.name, victim
           %td= victim.age
@@ -17,6 +17,4 @@
       %tfoot.panel-footer
         %tr
           %td{ colspan: 4 }
-            = link_to '<<'
-            = link_to 'Show all'
-            = link_to '>>'
+  %p= will_paginate @victims

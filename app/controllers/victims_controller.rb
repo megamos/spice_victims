@@ -4,7 +4,7 @@ class VictimsController < ApplicationController
   before_action :authenticate, only: [:edit, :update, :destroy]
 
   def index
-    @victims = Victim.all
+    @victims = Victim.paginate(:page => params[:page])
     @links = Link.all
     victims_count
     victims_latest
