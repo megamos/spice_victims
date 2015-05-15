@@ -5,6 +5,7 @@
     <a href="http://www.whitehouse.gov/sites/default/files/docs/state_profile_-_texas.pdf">Texas (all drugs)</a>
     <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
     <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
+  = render 'layouts/sorting_options'
   - @links.take(10).each do |link|
     .link.col-md-4
       %a{:href => "#{link.url}"}

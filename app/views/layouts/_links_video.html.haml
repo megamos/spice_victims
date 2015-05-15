@@ -1,9 +1,6 @@
 .links-video
   %h2 Videos
-  .sorting-options
-    %a Latest
-    %a Top-rated
-    %a Most seen
+  = render 'layouts/sorting_options'
   .row
     - @links_video.each do |link|
       .col-md-4.video
