@@ -38,7 +38,7 @@ class Link < ActiveRecord::Base
 
   before_save { self.url.downcase! }
 
-  validates :category, presence: true, inclusion: {in: %w(Newspaper Research Video Other)}
+  validates :category, presence: true, inclusion: {in: %w(newspaper research video other)}
   validates :topic, presence: true, length: {minimum: 3,maximum: 50}
   validates :info, length: {maximum: 500}
   validates :url, presence: true, uniqueness: true

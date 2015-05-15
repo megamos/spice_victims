@@ -23,7 +23,7 @@
 #
 
 class Victim < ActiveRecord::Base
-  default_scope { order('country, name') }
+  # default_scope { order('country, name') }
 
   before_save { self.city = city.gsub(/\S+/, &:capitalize) }
 
