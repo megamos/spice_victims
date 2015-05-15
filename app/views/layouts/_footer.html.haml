@@ -1,5 +1,18 @@
 %footer.panel-fixed-bottom
   .wrapper.panel-footer
-    %p Stay safe
-    %p
-      %span keep it natural
+    .row
+      .col-md-3
+      %ul.col-md-1
+        %li= link_to 'Login', new_user_session_path
+        %li= link_to 'Register', new_user_registration_path
+        %li= link_to 'Help update'
+      .col-md-4
+        %p Stay safe
+        %p
+          %span keep it natural
+      .col-md-4
+      %ul.col-md-2
+        %li= link_to 'Add a victim', new_victim_path
+        %li= link_to 'Add a link', new_link_path
+        %li= link_to 'Victim charts'
+        %li= link_to 'All links'
