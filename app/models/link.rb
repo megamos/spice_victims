@@ -37,6 +37,7 @@ class Link < ActiveRecord::Base
   default_scope { order('cached_votes_score DESC, id') }
 
   before_save { self.url.downcase! }
+  before_validation { self.category.downcase! }
 
   validates :category, presence: true, inclusion: {in: %w(newspaper research video other)}
   validates :topic, presence: true, length: {minimum: 3,maximum: 50}
