@@ -6,10 +6,11 @@
         %li= link_to 'Login', new_user_session_path
         %li= link_to 'Register', new_user_registration_path
         %li= link_to 'Help update'
-      .col-md-4
-        %p Stay safe
+      .col-md-4.safty-msg
+        %p Stay safe,
         %p
-          %span keep it natural
+          %span keep it natural.
+        %p.created-by created by ppl who care
       .col-md-4
       %ul.col-md-2
         %li= link_to 'Add a victim', new_victim_path
