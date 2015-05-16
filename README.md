@@ -1,4 +1,4 @@
-## Spice-deaths Counter
+## Spice Victims
 
 **http://cryptic-spire-9877.herokuapp.com/**
 
@@ -10,16 +10,14 @@
 * *Hospitalized counter*
 * *Login & Register* - (Users/Admins)
   * option to add first-,last-name and victim relation
-* *Victims* - Name/Age/City/Country/Category(deceased, hospitalized, other)/Info/Picture/Comments/Link(info, newspaper)
-  * commenting for every Victim#show
+  * commenting for every Victim
 * *Links* - Category(news, research, video)
   * voteable
-* *Disscusion* - framed to enlighten us all about the topic
 * *Statistics page* (Showing year/country/deaths/hospitalized)
+  * data put in to charts
 
 #### Things that needs to be done before launch
 
-* Adding Discussion forum + Comments
 * Fix js function for showing next/last of Latest victims
 * Make the victims#show page
 * Pictures and explanation of Spice
