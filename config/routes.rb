@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :victims
 
+  get 'charts', to: 'victims#charts', as: 'charts'
+
   resources :links do
     member do
       put 'upvote', to: 'links#upvote'

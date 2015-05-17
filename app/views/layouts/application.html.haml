@@ -14,3 +14,4 @@
     .container
       = yield
     = render 'layouts/footer'
+    = javascript_include_tag 'zepto' if current_page? charts_path

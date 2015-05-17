@@ -1,5 +1,6 @@
 %header
   .user-panel
+    = link_to 'Help us update', root_path, class: 'help-us'
     - if user_signed_in?
       Welcome
       = current_user.first_name
@@ -26,9 +27,5 @@
       %br
       so far..
   #notice= notice
-  .help-us
-    = link_to 'Help us update'
 
-  .add-buttons
-    = link_to '+ Victim', new_victim_path, { :class => "add-victim"}
-    = link_to '+ Link', new_link_path, { :class => "add-link"}
+  = render 'layouts/add_buttons' unless current_page? charts_path

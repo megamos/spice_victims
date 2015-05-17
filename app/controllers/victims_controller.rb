@@ -15,6 +15,10 @@ class VictimsController < ApplicationController
   def show
   end
 
+  def charts
+    @victims = Victim.all
+  end
+
   def new
     @victim = Victim.new
   end

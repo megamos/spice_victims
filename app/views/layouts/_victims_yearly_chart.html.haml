@@ -1,4 +1,6 @@
 .victims-chart
-  %h2 Yearly victim count
+  %h2 Charts
+  %h4 Yearly victim count
   %p  since spice came out on the market in 2004
   = line_chart Victim.group_by_year(:accident_date).count
+  %p= link_to 'more charts', charts_path
