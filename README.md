@@ -1,7 +1,5 @@
 ## Spice Victims
 
-**http://cryptic-spire-9877.herokuapp.com/**
-
 **A site that counts the number of people killed or hospitalized in relation to the synthetic drug Spice.**
 
 ### Features
