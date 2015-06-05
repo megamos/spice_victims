@@ -56,24 +56,22 @@ header
   .add-buttons
     text-align: center
     @include clearfix
-    .add-victim
-      background: #400000
-      color: $victim-header
-      &:hover
-        background: rgb(180,0,0)
-        color: #fff
-    .add-link
-      background: #1C166D
-      color: #9B94FF
-      &:hover
-        background: rgb(0,0,180)
-        color: #fff
+    padding: 10px
+    i
+      font-size: 28px
     a
-      display: block
-      width: 50%
-      float: left
-      padding: 15px 0px
-      color: #fff
-      font-size: 22px
-      letter-spacing: 2px
-      text-decoration: none
+      text-decoration: underline
+    .add-victim
+      @extend .half-box
+      @extend .big-link
+      i
+        color: $victim-light
+      a  
+        color: $victim-light
+    .add-link
+      @extend .half-box
+      @extend .big-link
+      i
+        color: $link-light
+      a
+        color: $link-light

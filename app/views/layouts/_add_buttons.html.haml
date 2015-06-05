@@ -1,3 +1,7 @@
 .add-buttons
-  = link_to '+ Victim', new_victim_path, { :class => "add-victim"}
-  = link_to '+ Link', new_link_path, { :class => "add-link"}
+  .add-victim
+    %i{ class: "glyphicon glyphicon-plus"}
+    = link_to 'Victim', new_victim_path
+  .add-link
+    %i{ class: "glyphicon glyphicon-plus"}
+    = link_to 'Link', new_link_path

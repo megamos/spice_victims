@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   # devise authentication that requires user to be registered
-  before_action :authenticate_user!, only: [:upvote, :downvote]
+  before_action :authenticate_user!, only: [:upvote, :downvote, :new]
   # basic http authentication for admins
   before_action :authenticate, only: [:edit, :update, :destroy]
 

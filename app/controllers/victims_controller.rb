@@ -1,7 +1,9 @@
 class VictimsController < ApplicationController
-  before_action :set_victim, only: [:show, :edit, :update, :destroy]
+  # devise authentication that requires user to be registered
+  before_action :authenticate_user!, only: [:new]
   # basic http authentication for admins
   before_action :authenticate, only: [:edit, :update, :destroy]
+  before_action :set_victim, only: [:show, :edit, :update, :destroy]
 
   def index
     @victims = Victim.paginate(:page => params[:page])

@@ -6,16 +6,17 @@
     <a href="ttp://www.aftonbladet.se/nyheter/article19905364.ab">Lite fårn aftonbladet</a>
     <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
   = render 'layouts/sorting_options'
-  - @links.take(10).each do |link|
-    .link.col-md-4
-      %a{:href => "#{link.url}"}
-        %h4= link.topic
-      %p
-        = link.info
-      %span.voting
-        %span.ups= link.cached_votes_up
-        = link_to upvote_link_path(link), method: :put do
-          %i.fa.fa-chevron-up
-        = link_to downvote_link_path(link), method: :put do
-          %i.fa.fa-chevron-down
-        %span.downs= link.cached_votes_down
+  .wrapper
+    - @links.take(10).each do |link|
+      .link.col-md-4
+        %a{:href => "#{link.url}"}
+          %h4= link.topic
+        %p
+          = link.info
+        %span.voting
+          %span.ups= link.cached_votes_up
+          = link_to upvote_link_path(link), method: :put do
+            %i.fa.fa-chevron-up
+          = link_to downvote_link_path(link), method: :put do
+            %i.fa.fa-chevron-down
+          %span.downs= link.cached_votes_down

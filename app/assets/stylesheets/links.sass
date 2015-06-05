@@ -1,8 +1,8 @@
 .links-wrapper
-  background: #eee
+  background: $link-dark
   border: solid $thick-border $link-dark
   border-top: none
-  color: $link-dark
+  color: #fff
 
 .vote-div
   text-align: center
@@ -19,9 +19,14 @@
     float: right
     padding-right: 20px
 .links
-  .link
-    display: block
-    text-decoration: none
+  .wrapper
+    @include display(flex)
+    @include justify-content(space-between)
+    @include flex-wrap(wrap)
+    .link
+      @include flex(1)
+      @include flex-basis(250px)
+      margin-bottom: 20px
 
 .links-video
   font-size: $medium-font
