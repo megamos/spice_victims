@@ -1,5 +1,6 @@
 body
   color: #fff
+  background: #000
 
 .container
   background: #000
@@ -8,8 +9,12 @@ body
   background: #000
   margin: 0px 0px
 .main-content > div > div
+  margin-top: 20px
   padding: 20px
-  border-bottom: solid 5px #000 
+  &:last-child
+    border-bottom: none
+  &:first-child
+    margin-top: 0px
 
 // headers
 h1
