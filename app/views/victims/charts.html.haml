@@ -1,7 +1,11 @@
 .victims-wrapper.charts
   %h2 Victim charts
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  %h3 Age of the Victims
   = pie_chart Victim.group(:age).count
+  %h3 Nationality of the Victims
   = geo_chart Victim.group(:country).count
+  %h3 Deaths & Hospitalization
   = column_chart Victim.group(:category).count
+  %h3 Yearly count of Victims
   = line_chart Victim.group_by_year(:accident_date).count
