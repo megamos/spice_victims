@@ -66,7 +66,7 @@ class VictimsController < ApplicationController
     end
 
     def links_new
-      @links_new = @links.take(3)
+      @links_new = @links.reorder( 'created_at' ).take(3)
     end
 
     def links_video
