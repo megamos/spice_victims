@@ -107,6 +107,11 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    gon (5.2.3)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     grit (2.0.0)
       diff-lcs (>= 1.1.2)
       mime-types (>= 1.15)
@@ -226,6 +231,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    request_store (1.1.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.2.2)
@@ -344,6 +350,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   foreman
+  gon (~> 5.2.3)
   groupdate
   haml
   haml-rails
