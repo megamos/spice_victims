@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  victim = gon.victims_latest
+  victim = gon.victims_latest if gon
   current = 0
   
   change_victim = (current) ->
