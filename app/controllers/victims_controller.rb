@@ -7,11 +7,14 @@ class VictimsController < ApplicationController
 
   def index
     @victims = Victim.paginate(:page => params[:page])
-    @links = Link.all
+    @links = Link.paginate(:page => params[:page])
+    
+    @links_new = Link.reorder( 'created_at' ).take(3)
+    @links_video = Link.where( category: "video" ).limit(6)
+    gon.victims_latest = Victim.reorder('created_at').take(10)
+    
     victims_count
-    victims_latest
-    links_new
-    links_video
+    
   end
 
   def show
@@ -59,19 +62,5 @@ class VictimsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def victim_params
       params.require(:victim).permit(:name, :age, :country, :city, :link, :info, :category)
-    end
-
-    def victims_latest
-      @victims_latest = @victims.reorder('created_at').take(10)
-    end
-
-    def links_new
-      @links_new = @links.reorder( 'created_at' ).take(3)
-    end
-
-    def links_video
-      @links_video = Link.where( category: "video" ).limit(6)
-      #Later replaced by
-      #@links_video = Links.sort_by( :category => "video" ).take(3)
     end
 end
