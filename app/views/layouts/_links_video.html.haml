@@ -1,9 +1,9 @@
 .links-video
   %h2 Videos
   = render 'layouts/sorting_options'
-  .row
+  .wrapper
     - @links_video.each do |link|
-      .col-md-4.video
+      .video
         %a{ href: link.url }= image_tag 'video.png', alt: "A video link"
         %br
         %a{ href: link.url }= link.topic

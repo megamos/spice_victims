@@ -5,6 +5,8 @@
 .vote-div
   text-align: center
   padding: 2px
+  float: left
+  margin-right: 20px
   span, a
     font-size: 16px
     line-height: 14px
@@ -19,7 +21,7 @@
 .links
   .wrapper
     @include display(flex)
-    @include justify-content(space-between)
+    @include justify-content(space-around)
     @include flex-wrap(wrap)
     .link
       @include flex(1)

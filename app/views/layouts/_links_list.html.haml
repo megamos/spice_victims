@@ -8,15 +8,14 @@
   = render 'layouts/sorting_options'
   .wrapper
     - @links.take(10).each do |link|
-      .link.col-md-4
-        %a{:href => "#{link.url}"}
-          %h4= link.topic
+      .link
+        .vote-div
+          %span.voting
+            = link_to upvote_link_path(link), method: :put do
+              %i.fa.fa-chevron-up
+            %span.total= (link.cached_votes_up - link.cached_votes_down)
+            = link_to downvote_link_path(link), method: :put do
+              %i.fa.fa-chevron-down
+        = link_to link.topic, link.url
         %p
           = link.info
-        %span.voting
-          %span.ups= link.cached_votes_up
-          = link_to upvote_link_path(link), method: :put do
-            %i.fa.fa-chevron-up
-          = link_to downvote_link_path(link), method: :put do
-            %i.fa.fa-chevron-down
-          %span.downs= link.cached_votes_down
