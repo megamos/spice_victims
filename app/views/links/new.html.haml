@@ -1,7 +1,4 @@
 .new-link-form
-  = link_to root_path do
-    %span.glyphicon.glyphicon-arrow-left
-
   %h2 Add a link
   = simple_form_for @link, html: {class: 'form-horizontal'} do |f|
     = f.input :category, collection: ['Newspaper', 'Research', 'Video', 'Other'], prompt: 'Choose'
@@ -10,4 +7,7 @@
     = f.input :url, as: :url
     = f.button :submit, 'Add link', class: 'btn btn-primary'
 
-// = form_for @link, :url => links_path(@link) do |f|
+  = link_to root_path, class: 'return-link' do
+    %span.glyphicon.glyphicon-arrow-left
+    %span Go Back
+  // = form_for @link, :url => links_path(@link) do |f|

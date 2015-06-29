@@ -1,6 +1,4 @@
 .new-victim-form
-  = link_to root_path do
-    %span.glyphicon.glyphicon-arrow-left
 
   %h2 New Victim
   = simple_form_for @victim, html: {class: 'form-horizontal'} do |f|
@@ -14,3 +12,7 @@
     %span ( Sites connected to what happend )
     = f.input :link, as: :url
     = f.button :submit, 'Add victim', class: 'btn btn-primary'
+  
+  = link_to root_path, class: 'return-link' do
+    %span.glyphicon.glyphicon-arrow-left
+    %span Go Back

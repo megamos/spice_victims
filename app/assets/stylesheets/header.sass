@@ -60,16 +60,19 @@ header
       font-size: 28px
     a
       text-decoration: underline
+      @extend .big-link
+    .home
+      position: absolute
+      left: 50%
+      margin-left: -62px
     .add-victim
       @extend .half-box
-      @extend .big-link
       i
         color: $victim-light
       a  
         color: $victim-light
     .add-link
       @extend .half-box
-      @extend .big-link
       i
         color: $link-light
       a

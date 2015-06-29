@@ -9,7 +9,7 @@
     = Gon::Base.render_data({})
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag "//www.google.com/jsapi", "chartkick"
-    = javascript_include_tag 'victims'
+    = javascript_include_tag 'victims', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     = render 'layouts/header'
@@ -17,3 +17,30 @@
       = yield
     = render 'layouts/footer'
     = javascript_include_tag 'zepto' if current_page? charts_path
+    :coffee
+      $(document).ready ->
+        victim = gon.victims_latest if gon
+        current = 0
+        
+        change_victim = (current) ->
+          $('#name').text(victim[current].name)
+          $('#age').text(victim[current].age + " years old")
+          $('#country').text("from " + 
+          victim[current].country)
+          $('#info').text(victim[current].info)
+          $('#link').attr("href", victim[current].link)
+        
+          
+        $('.control-prev').click ->
+          current = if 0 then 9 else current -= 1 
+          change_victim(current)
+            
+        $('.control-next').click ->
+          if current < 9
+            current += 1
+          else
+            current = 0
+          change_victim(current)
+            
+        change_victim(current)
+        

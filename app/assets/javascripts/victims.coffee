@@ -1,14 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-$ ->
+$(document).ready ->
   victim = gon.victims_latest if gon
   current = 0
   
   change_victim = (current) ->
     $('#name').text(victim[current].name)
-    $('#age').text(victim[current].age)
-    $('#country').text(victim[current].country)
+    $('#age').text(victim[current].age + " years old")
+    $('#country').text("from " + 
+    victim[current].country)
     $('#info').text(victim[current].info)
     $('#link').attr("href", victim[current].link)
   
@@ -28,4 +26,6 @@ $ ->
     else
       current = 0
       change_victim(current)
-  change_victim(current)
+      
+  $(document).ready ->
+    change_victim(current)

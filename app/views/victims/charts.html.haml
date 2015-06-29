@@ -9,3 +9,6 @@
   = column_chart Victim.group(:category).count
   %h3 Yearly count of Victims
   = line_chart Victim.group_by_year(:accident_date).count
+  = link_to root_path, class: 'return-link' do
+    %span.glyphicon.glyphicon-arrow-left
+    %span Go Back
