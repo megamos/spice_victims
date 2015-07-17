@@ -5,19 +5,27 @@
 .vote-div
   text-align: center
   padding: 2px
-  float: left
   margin-right: 20px
+  display: inline-block
   span, a
     font-size: 16px
     line-height: 14px
     display: block
 
 .links-new
-  .topic
-    font-size: $medium-font
-  .category
-    float: right
-    padding-right: 20px
+  @include display(flex)
+  @include justify-content(space-around)
+  @include flex-wrap(wrap)
+  @include flex-direction(column)
+  .link
+    @include flex-grow(1)
+    .link-body
+      display: inline-block
+      .topic
+        font-size: $medium-font
+    .category
+      float: right
+      padding-right: 20px
 .links
   .wrapper
     @include display(flex)

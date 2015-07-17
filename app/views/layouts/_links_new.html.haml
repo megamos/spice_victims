@@ -1,15 +1,15 @@
 .links-new
   %h2 New
   - @links_new.each do |link|
-    .row
-      .col-lg-2.vote-div
+    .link
+      .vote-div
         %span.voting
           = link_to upvote_link_path(link), method: :put do
             %i.fa.fa-chevron-up
           %span.total= (link.cached_votes_up - link.cached_votes_down)
           = link_to downvote_link_path(link), method: :put do
             %i.fa.fa-chevron-down
-      .col-lg-10
+      .link-body
         %a.topic{ href: link.url }= link.topic
-        %span.category= link.category
         %p= link.info
+      %span.category= link.category
