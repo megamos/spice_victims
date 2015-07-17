@@ -1,4 +1,4 @@
-.links
+.learn-more
   %h2 Learn more
   /
     <a href="http://www.scienceworldreport.com/articles/14544/20140507/total-120-synthetic-marijuana-deaths-recorded-texas-past-week.htm">120 the last weeks in texas</a>
@@ -16,6 +16,7 @@
             %span.total= (link.cached_votes_up - link.cached_votes_down)
             = link_to downvote_link_path(link), method: :put do
               %i.fa.fa-chevron-down
-        = link_to link.topic, link.url
-        %p
-          = link.info
+        .link-body
+          = link_to link.topic, link.url
+          %p
+            = link.info

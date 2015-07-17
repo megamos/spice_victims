@@ -26,15 +26,22 @@
     .category
       float: right
       padding-right: 20px
-.links
+.learn-more
   .wrapper
     @include display(flex)
     @include justify-content(space-around)
     @include flex-wrap(wrap)
     .link
-      @include flex(1)
       @include flex-basis(250px)
       margin-bottom: 20px
+      @include flex-grow(1)
+      .link-body
+        display: inline-block
+        .topic
+          font-size: $medium-font
+      .category
+        float: right
+        padding-right: 20px
 
 .links-video
   font-size: $medium-font
@@ -42,12 +49,17 @@
   h2
     text-align: left
     padding-bottom: 0px
-  .video
-    margin-top: 30px
-    a:first-of-type
-      color: $link-header
-    img
-      +size(150px)
+  .wrapper
+    @include display(flex)
+    @include justify-content(space-around)
+    @include flex-wrap(wrap)
+    .video
+      @include flex-grow(1)
+      padding: 30px
+      a:first-of-type
+        color: $link-header
+      img
+        +size(150px)
 .sorting-options
   font-size: $medium-font
   text-align: center
