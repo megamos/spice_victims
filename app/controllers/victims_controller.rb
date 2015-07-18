@@ -10,7 +10,7 @@ class VictimsController < ApplicationController
     @links = Link.paginate(:page => params[:page])
     
     @links_new = Link.reorder( 'created_at' ).take(3)
-    @links_video = Link.where( category: "video" ).limit(6)
+    @links_video = Link.where( category: "video" ).paginate(:page => params[:page], :per_page => 6 )
     gon.victims_latest = Victim.reorder('created_at').take(10)
     
     victims_count

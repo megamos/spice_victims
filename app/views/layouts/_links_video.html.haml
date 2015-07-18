@@ -15,3 +15,5 @@
           = link_to downvote_link_path(link), method: :put do
             %i.fa.fa-chevron-down
           %span.downs= link.cached_votes_down
+    .pagination
+      %p= will_paginate @links_video

@@ -7,7 +7,7 @@
     <a href="http://www.theguardian.com/society/2015/jan/15/synthetic-cannabis-deaths-show-case-for-controlled-sale-of-marijuana-expert-says">The Guardian</a>
   = render 'layouts/sorting_options'
   .wrapper
-    - @links.take(10).each do |link|
+    - @links.take(12).each do |link|
       .link
         .vote-div
           %span.voting
@@ -20,3 +20,5 @@
           = link_to link.topic, link.url
           %p
             = link.info
+    .pagination
+      %p= will_paginate @links
